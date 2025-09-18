@@ -47,7 +47,6 @@ $items_en_carrito = isset($_SESSION['carrito']) ? count($_SESSION['carrito']) : 
                 <h3>Panel de Administración</h3>
                 <a href="mostrar_datos.php" class="nav-link" style="background-color: #007bff;">Ver Datos Registrados</a>
                 <a href="clientes_frecuentes.php" class="nav-link" style="background-color: #28a745;">Clientes Frecuentes</a>
-                <a href="admin_productos.php" class="nav-link" style="background-color: #d9534f;">Administrar Productos</a>
             </div>
         </div>
     </header>
