@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script>
+        function validarCliente() {
+            let nombre = document.getElementById("nombre").value;
+            let email = document.getElementById("email").value;
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expresión para validar el formato del email
+
+            if (nombre.trim() === "" || email.trim() === "") {
+                alert("Por favor, complete todos los campos.");
+                return false;
+            }
+            if (!emailRegex.test(email)) {
+                alert("Por favor, ingrese un email válido.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+    <title>Registrar Cliente</title>
+</head>
+<body>
+    <header>
+        <h1>Registrar Nuevo Cliente</h1>
+    </header>
+    <a href="./index.php" class="nav-link">Volver a la tienda</a>
+    <a href="./mostrar_datos.php" class="nav-link">Ver datos</a>
+
+    <div class="pedido-form-container">
+    <form action="../src/logic/registrar_cliente.php" method="POST" onsubmit="return validarCliente()" id="formCliente">
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+
+            <label for="direccion">Direccion:</label>
+            <input type="text" id="direccion" name="direccion" required>
+
+            <button type="submit">Registrar Cliente</button>
+        </form>
+    </div>
+</body>
+<script>
+// Redirigir tras submit exitoso
+if (window.location.search.includes('exito=1')) {
+    setTimeout(function() {
+        window.location.href = 'mostrar_datos.php';
+    }, 1200);
+}
+</script>
+</body>
+</html>

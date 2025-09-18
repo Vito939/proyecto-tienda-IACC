@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar Pedido</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Buscar Pedido por Descripción</h1>
+    </header>
+
+    <a href="./index.php" class="nav-link">Volver a la pagina principal</a>
+
+    <div class="form-container" style="margin: auto;">
+    <form action="../src/logic/procesar_busqueda.php" method="POST">
+            <label for="termino">Término de búsqueda:</label>
+            <input type="text" id="termino" name="termino_busqueda" required>
+            <button type="submit">Buscar Pedido</button>
+        </form>
+    </div>
+</body>
+</html>
