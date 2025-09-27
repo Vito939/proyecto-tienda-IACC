@@ -5,7 +5,7 @@ require_once __DIR__ . '/../src/config/conexion.php';
 #Obtener productos de la base de datos
 $sql = "SELECT id_producto, nombre, descripcion, precio, stock, imagen_url FROM PRODUCTO";
 $resultado = $conn->query($sql);
-
+#este es un mensaje de prueba de github, hecho por jose luis barrera
 $productos_db = [];
 if ($resultado->num_rows > 0) {
     while ($fila = $resultado->fetch_assoc()) {
